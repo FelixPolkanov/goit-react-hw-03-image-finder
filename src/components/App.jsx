@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { ToastContainer } from 'react-toastify';
-import { toast } from 'react-toastify';
+
 import {
   ImageGallery,
   Searchbar,
@@ -53,13 +53,7 @@ export class App extends Component {
 
     try {
       const data = await fetchImages(query, page);
-      if (page === 1 && data.hits.length > 0) {
-        toast.success(`We find ${data.totalHits} images`, {
-          autoClose: 1500,
-          theme: 'colored',
-        });
-      }
-
+    
       if (data.hits.length === 0) {
         return this.setState({ status: 'empty', images: [] });
       }
@@ -93,14 +87,14 @@ export class App extends Component {
 
         {status === 'empty' && (
           <Notification
-            message="We didn't find anything, try to enter the correct query"
+            message="Please, try another query"
             status={status}
           />
         )}
 
         {status === 'error' && (
           <Notification
-            message="Whoops, something went wrong, try again"
+            message="Error, please try again"
             status={status}
           />
         )}

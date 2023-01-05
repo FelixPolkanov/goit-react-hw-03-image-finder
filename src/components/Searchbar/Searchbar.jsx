@@ -23,7 +23,7 @@ export class Searchbar extends Component {
     e.preventDefault();
     const normalizedQuery = this.state.query.trim();
     if (normalizedQuery === '') {
-      return toast.info('Insert correct request', {
+      return toast.info('Enter correct data!', {
         position: 'top-right',
         autoClose: 2000,
         hideProgressBar: false,
