@@ -30,9 +30,7 @@ export class Modal extends Component {
     return createPortal(
       <Overlay onClick={this.onBackdropClick}>
         <DivModal>{this.props.children}</DivModal>
-      </Overlay>,
-      modalRoot
-    );
+      </Overlay>, modalRoot);
   }
 }
 
